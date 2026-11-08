@@ -1,14 +1,20 @@
 import SwiftUI
 
 enum AppTheme {
+    // Verde claro, tomado del resplandor del logo
     static let accent = Color(
-        uiColor: UIColor(red: 0.90, green: 0.12, blue: 0.16, alpha: 1.00)
+        uiColor: UIColor(red: 0.50, green: 0.95, blue: 0.20, alpha: 1.00)
     )
+    // Color de texto/íconos para poner SOBRE el verde claro (el blanco no se lee)
+    static let onAccent = Color(
+        uiColor: UIColor(red: 0.02, green: 0.09, blue: 0.03, alpha: 1.00)
+    )
+    // Fondos oscuros con un tono verde muy suave
     static let pageBackground = Color(
-        uiColor: UIColor(red: 0.047, green: 0.012, blue: 0.016, alpha: 1.00)
+        uiColor: UIColor(red: 0.012, green: 0.047, blue: 0.020, alpha: 1.00)
     )
     static let consoleBackground = Color(
-        uiColor: UIColor(red: 0.098, green: 0.027, blue: 0.035, alpha: 1.00)
+        uiColor: UIColor(red: 0.027, green: 0.098, blue: 0.043, alpha: 1.00)
     )
     static let pageInset: CGFloat = 16
     static let rowIconSize: CGFloat = 17
@@ -129,7 +135,7 @@ struct AppLogo: View {
         } else {
             Image(systemName: "slider.horizontal.3")
                 .font(.title2.weight(.semibold))
-                .foregroundStyle(.white)
+                .foregroundStyle(AppTheme.onAccent)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background(AppTheme.accent)
         }
