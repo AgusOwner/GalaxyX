@@ -104,22 +104,34 @@ struct AppLogo: View {
 
     var body: some View {
         Group {
-            if let icon = UIImage(named: "AppIcon60x60")
-                ?? Bundle.main.path(forResource: "AppIcon60x60@2x", ofType: "png").flatMap(UIImage.init(contentsOfFile:))
-                ?? UIImage(named: "AppIcon") {
-                Image(uiImage: icon)
+            if let logo = UIImage(named: "GalaxyXLogo") {
+                Image(uiImage: logo)
                     .resizable()
-                    .scaledToFill()
+                    .scaledToFit()
+                    .frame(width: size, height: size)
             } else {
-                Image(systemName: "slider.horizontal.3")
-                    .font(.title2.weight(.semibold))
-                    .foregroundStyle(.white)
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .background(AppTheme.accent)
+                legacyIcon
+                    .frame(width: size, height: size)
+                    .clipShape(RoundedRectangle(cornerRadius: size * 0.22, style: .continuous))
             }
         }
-        .frame(width: size, height: size)
-        .clipShape(RoundedRectangle(cornerRadius: size * 0.22, style: .continuous))
         .accessibilityHidden(true)
+    }
+
+    @ViewBuilder
+    private var legacyIcon: some View {
+        if let icon = UIImage(named: "AppIcon60x60")
+            ?? Bundle.main.path(forResource: "AppIcon60x60@2x", ofType: "png").flatMap(UIImage.init(contentsOfFile:))
+            ?? UIImage(named: "AppIcon") {
+            Image(uiImage: icon)
+                .resizable()
+                .scaledToFill()
+        } else {
+            Image(systemName: "slider.horizontal.3")
+                .font(.title2.weight(.semibold))
+                .foregroundStyle(.white)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .background(AppTheme.accent)
+        }
     }
 }
