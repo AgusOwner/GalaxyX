@@ -32,8 +32,8 @@
 "onboarding.language_subtitle" = "You can change this later in Settings.";
 "onboarding.language_hint" = "Selected: %@";
 "onboarding.welcome_title" = "Bienvenido Panel GalaxyX";
-"onboarding.welcome_message" = "Developed by GalaxyX";
-"onboarding.welcome_badge" = "Official 3105 identity";
+"onboarding.welcome_message" = "Developed by OsoGame";
+"onboarding.welcome_badge" = "Official identity";
 "onboarding.versions_title" = "Supported iOS versions";
 "onboarding.versions_subtitle" = "3105 is verified on the ranges below. Unsupported builds are blocked.";
 "onboarding.versions_footer" = "This device: iOS %@ (%@)";
